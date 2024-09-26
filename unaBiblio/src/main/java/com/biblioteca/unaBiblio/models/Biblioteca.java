@@ -28,10 +28,12 @@ public class Biblioteca {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id_biblioteca;
 	
-	@Column(name="facultad", length = 200)
+	
+	@Column(name = "facultad", length = 200, nullable = false)
 	private String facultad;
 	
-	@Column(name="estado")
+	
+	@Column(name = "estado", nullable = false)
 	private Boolean estado;
 	
 }
