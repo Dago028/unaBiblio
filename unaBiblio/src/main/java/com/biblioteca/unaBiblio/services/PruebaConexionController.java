@@ -1,4 +1,4 @@
-package services;
+package com.biblioteca.unaBiblio.services;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -23,7 +23,7 @@ public class PruebaConexionController {
 	public String verificarConexion() {
 		try (Connection connection = dataSource.getConnection()) {
 			//Imprimimos un mensaje de respuesta
-			System.out.println("BD conectada");
+			//System.out.println("BD conectada");
 			return connection.isValid(1) ? "Conexión exitosa con la base de datos biblioteca" : "Fallo la conexion a la base de datos";
 		} catch (SQLException e) {
 			return "Error al conectar con la base de datos: "+ e.getMessage();

@@ -1,9 +1,11 @@
-package models;
+package com.biblioteca.unaBiblio.models;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,6 +19,8 @@ import jakarta.persistence.Column;
 @AllArgsConstructor
 
 @Entity
+@Table(name = "bibliotecas")
+
 public class Biblioteca {
 	
 	//Definicion de los campos de Biblioteca
@@ -31,3 +35,6 @@ public class Biblioteca {
 	private Boolean estado;
 	
 }
+
+
+
