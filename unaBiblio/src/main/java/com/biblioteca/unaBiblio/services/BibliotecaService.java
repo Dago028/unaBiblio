@@ -1,6 +1,6 @@
 package com.biblioteca.unaBiblio.services;
 
-import com.biblioteca.unaBiblio.ResourceNotFoundException;
+
 import com.biblioteca.unaBiblio.dto.BibliotecaDTO;
 import com.biblioteca.unaBiblio.models.Biblioteca;
 import com.biblioteca.unaBiblio.repositories.BibliotecaRepository;

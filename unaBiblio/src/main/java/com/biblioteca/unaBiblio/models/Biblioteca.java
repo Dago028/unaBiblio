@@ -20,7 +20,6 @@ import jakarta.persistence.Column;
 
 @Entity
 @Table(name = "bibliotecas")
-
 public class Biblioteca {
 	
 	//Definicion de los campos de Biblioteca
