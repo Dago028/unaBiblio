@@ -28,7 +28,8 @@ public class PrestamoLibro {
 	//Definicion de los campos de Biblioteca
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_prestamo;
+	@Column(name = "id_prestamo", nullable = false)
+	private int idPrestamo;
 	
 	@Column(name="fecha_prestamo", length = 200)
 	private Date fechaPrestamo;
@@ -40,6 +41,6 @@ public class PrestamoLibro {
     private boolean estadoPrestamo;
 
     @Column(name="observaciones")
-    private boolean observaciones;
+    private String observaciones;
 	
 }

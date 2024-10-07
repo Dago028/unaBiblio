@@ -26,7 +26,8 @@ public class Bibliotecario {
 	//Definicion de los campos de Biblioteca
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_bibliotecario;
+	@Column(name="id_bibliotecario", nullable = false)
+	private int idBibliotecario;
 	
 	@Column(name="cedula", length = 200)
 	private int cedula;

@@ -36,7 +36,7 @@ public class Libro {
     @Column(name="editorial", length = 200)
 	private String editorial;
 
-    @Column(name="anio_publicacion", length = 200)
+    @Column(name="anio_publicacion", length = 10)
 	private String anioPublicacion;
 	
 }

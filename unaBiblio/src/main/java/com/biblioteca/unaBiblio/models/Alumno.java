@@ -23,10 +23,11 @@ import jakarta.persistence.Column;
 
 public class Alumno {
 	
-	//Definicion de los campos de Biblioteca
+	//Definicion de los campos de Alumno
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_alumno;
+	@Column(name="id_alumno", nullable = false)
+	private int idAlumno;
 	
 	@Column(name="cedula", length = 200)
 	private int cedula;
