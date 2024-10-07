@@ -26,7 +26,8 @@ public class Usuario {
 	//Definicion de los campos de Biblioteca
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_usuario;
+	@Column(name="id_usuario", nullable = false)
+	private int idUsuario;
 	
 	@Column(name="token", length = 200)
 	private String token;

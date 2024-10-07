@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 @RestController
-@RequestMapping("/prestamo-libro")
+@RequestMapping("/prestamo")
 public class PrestamoLibroController {
 
     @Autowired
