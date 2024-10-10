@@ -1,4 +1,4 @@
-package com.biblioteca.unaBiblio.models;
+/*package com.biblioteca.unaBiblio.models;
 
 
 import jakarta.persistence.Entity;
@@ -43,4 +43,4 @@ public class PrestamoLibro {
     @Column(name="observaciones")
     private String observaciones;
 	
-}
+}*/

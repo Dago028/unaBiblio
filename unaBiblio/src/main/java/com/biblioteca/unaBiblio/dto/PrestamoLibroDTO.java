@@ -1,4 +1,4 @@
-package com.biblioteca.unaBiblio.dto;
+/*package com.biblioteca.unaBiblio.dto;
 
 import com.biblioteca.unaBiblio.models.PrestamoLibro;
 import lombok.AllArgsConstructor;
@@ -24,4 +24,4 @@ public class PrestamoLibroDTO {
         this.estado =  prestamoLibro.getEstado();
         this.observaciones =  prestamoLibro.getObservaciones();
     }
-}
+}*/

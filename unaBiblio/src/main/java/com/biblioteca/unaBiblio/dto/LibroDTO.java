@@ -1,5 +1,6 @@
 package com.biblioteca.unaBiblio.dto;
 
+
 import com.biblioteca.unaBiblio.models.Libro;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,7 +16,8 @@ public class LibroDTO {
     private String nombreLibro;
     private String autor;
     private String editorial;
-    private String anio_publicacion;
+    private int anio_publicacion;
+    private int idBiblioteca;
 
     public LibroDTO(Libro libro) {
         this.idLibro =  libro.getIdLibro();
@@ -23,5 +25,6 @@ public class LibroDTO {
         this.autor = libro.getAutor();
         this.editorial = libro.getEditorial();
         this.anio_publicacion = libro.getAnioPublicacion();
+        this.idBiblioteca = libro.getBiblioteca().getId_biblioteca();
     }
 }

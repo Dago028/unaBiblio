@@ -40,5 +40,4 @@ public class LibroController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-
 }

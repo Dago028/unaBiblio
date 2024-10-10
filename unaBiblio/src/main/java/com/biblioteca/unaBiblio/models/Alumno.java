@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,10 +31,14 @@ public class Alumno {
 	@Column(name="id_alumno", nullable = false)
 	private int idAlumno;
 	
-	@Column(name="cedula", length = 200)
-	private int cedula;
-	
-	@Column(name="nombre_apellido")
+	@Column(name="nombre_apellido", length= 200)
 	private String nombreApellido;
 	
+	@ManyToOne
+    @JoinColumn(name="id_biblioteca", nullable = false)
+    private Biblioteca biblioteca;
+	
+	@ManyToOne
+    @JoinColumn(name="id_usuario", nullable = false)
+    private Usuario usuario;
 }

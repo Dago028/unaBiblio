@@ -12,10 +12,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UsuarioDTO {
     private int idUsuario;
-    private String token;
+    private String cedula;
+    private String contrasena;
+    private String facultad;
+    private int idBiblioteca;
+    
 
     public UsuarioDTO(Usuario usuario) {
-        this.idUsuario =  usuario.getUsuario();
-        this.token = usuario.getToken();
+        this.idUsuario = usuario.getId_usuario();
+        this.cedula = usuario.getCedula();
+        this.contrasena = usuario.getContrasena();
+        this.facultad = usuario.getFacultad();
+        this.idBiblioteca = usuario.getBiblioteca().getId_biblioteca();
     }
 }

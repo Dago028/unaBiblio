@@ -5,11 +5,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+
 import jakarta.persistence.Column;
 
 
@@ -21,7 +25,7 @@ import jakarta.persistence.Column;
 @Table(name = "libros")
 public class Libro {
 	
-	//Definicion de los campos de Biblioteca
+	//Definicion de los campos de Libro
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_libro", nullable = false)
@@ -37,6 +41,10 @@ public class Libro {
 	private String editorial;
 
     @Column(name="anio_publicacion", length = 10)
-	private String anioPublicacion;
-	
+	private int anioPublicacion;
+    
+    //Clave foranea a la tabla de bibliotecas
+    @ManyToOne
+    @JoinColumn(name="id_biblioteca", nullable = false)
+    private Biblioteca biblioteca;
 }
