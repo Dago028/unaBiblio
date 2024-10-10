@@ -1,4 +1,4 @@
-package com.biblioteca.unaBiblio.services;
+/*package com.biblioteca.unaBiblio.services;
 
 import com.biblioteca.unaBiblio.dto.PrestamoLibroDTO;
 import com.biblioteca.unaBiblio.models.PrestamoLibro;
@@ -13,4 +13,4 @@ public class PrestamoLibroService {
     @Autowired
     private PrestamoLibroRepository PrestamoLibroRepository;
 
-}
+}*/

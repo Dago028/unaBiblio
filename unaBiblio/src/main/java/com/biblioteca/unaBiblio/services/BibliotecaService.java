@@ -2,6 +2,7 @@ package com.biblioteca.unaBiblio.services;
 
 
 import com.biblioteca.unaBiblio.dto.BibliotecaDTO;
+
 import com.biblioteca.unaBiblio.models.Biblioteca;
 import com.biblioteca.unaBiblio.repositories.BibliotecaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,7 +64,8 @@ public class BibliotecaService {
         bibliotecaRepository.delete(bibliotecaExistente);
     }
     
-    
-    
-    
+    public Biblioteca obtenerBibliotecaPorId(int id) {
+    	return bibliotecaRepository.findById(id)
+    			.orElseThrow(() -> new ResourceNotFoundException("Biblioteca no encontrada con id: " + id));
+    }
 }

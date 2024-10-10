@@ -1,6 +1,7 @@
 package com.biblioteca.unaBiblio.services;
 
 import com.biblioteca.unaBiblio.dto.LibroDTO;
+import com.biblioteca.unaBiblio.models.Biblioteca;
 import com.biblioteca.unaBiblio.models.Libro;
 import com.biblioteca.unaBiblio.repositories.LibroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,15 @@ public class LibroService {
 
     @Autowired
     private LibroRepository libroRepository;
+    
+    @Autowired
+    private BibliotecaService bibliotecaService;
+    
 
     public List<LibroDTO> getAllLibros() {
         List<Libro> libros = libroRepository.findAll();
         return libros.stream()
-            .map(b -> new LibroDTO(b.getIdLibro(), b.getNombreLibro(), b.getAutor(), b.getEditorial(), b.getAnioPublicacion()))
+            .map(b -> new LibroDTO(b.getIdLibro(), b.getNombreLibro(), b.getAutor(), b.getEditorial(), b.getAnioPublicacion(),b.getBiblioteca().getId_biblioteca()))
             .collect(Collectors.toList());
     }
 
@@ -32,6 +37,9 @@ public class LibroService {
         libro.setAutor(libroDTO.getAutor());
         libro.setEditorial(libroDTO.getEditorial());
         libro.setAnioPublicacion(libroDTO.getAnio_publicacion());
+        
+        Biblioteca biblioteca = bibliotecaService.obtenerBibliotecaPorId(libroDTO.getIdBiblioteca());
+        libro.setBiblioteca(biblioteca);
     	
     	//Guarda la entidad en el repositorio
     	Libro nuevoLibro = libroRepository.save(libro);
@@ -50,6 +58,9 @@ public class LibroService {
         libroExistente.setAutor(libroDTO.getAutor());
         libroExistente.setEditorial(libroDTO.getEditorial());
         libroExistente.setAnioPublicacion(libroDTO.getAnio_publicacion());
+        
+        Biblioteca biblioteca = bibliotecaService.obtenerBibliotecaPorId(libroDTO.getIdBiblioteca());
+        libroExistente.setBiblioteca(biblioteca);
 
         // Guardar la libro actualizada en la base de datos
         Libro libroActualizado = libroRepository.save(libroExistente);

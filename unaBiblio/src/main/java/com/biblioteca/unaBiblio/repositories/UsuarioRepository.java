@@ -8,6 +8,6 @@ import com.biblioteca.unaBiblio.models.Usuario;
 
 
 @Repository
-public interface Usuario extends JpaRepository<Usuario,Integer> {
+public interface UsuarioRepository extends JpaRepository<Usuario,Integer> {
 	
 }
