@@ -80,5 +80,10 @@ public class AlumnoService {
     	
     	//Eliminar usuario
     	alumnoRepository.delete(alumnoExistente);
-    }   
+    }
+    
+    public Alumno obtenerAlumnoPorId(int id) {
+    	return alumnoRepository.findById(id)
+    			.orElseThrow(() -> new ResourceNotFoundException("Alumno no encontrado con id: " + id));
+    }
 }

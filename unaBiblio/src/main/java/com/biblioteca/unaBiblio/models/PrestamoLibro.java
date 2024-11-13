@@ -1,10 +1,12 @@
-/*package com.biblioteca.unaBiblio.models;
+package com.biblioteca.unaBiblio.models;
 
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,9 +40,21 @@ public class PrestamoLibro {
 	private Date fechaDevolucion;
 
     @Column(name="estado_prestamo")
-    private boolean estadoPrestamo;
+    private String estadoPrestamo;
 
     @Column(name="observaciones")
     private String observaciones;
+    
+    @ManyToOne
+    @JoinColumn(name="id_alumno", nullable = false)
+    private Alumno alumno;
+    
+    @ManyToOne
+    @JoinColumn(name="id_libro", nullable = false)
+    private Libro libro;
+    
+    @ManyToOne
+    @JoinColumn(name="id_bibliotecario", nullable = false)
+    private Bibliotecario bibliotecario;
 	
-}*/
+}

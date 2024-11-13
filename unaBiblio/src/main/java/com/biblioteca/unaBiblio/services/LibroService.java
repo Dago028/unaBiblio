@@ -77,4 +77,9 @@ public class LibroService {
         // Eliminar libro
         libroRepository.delete(libroExistente);
     }
+    
+    public Libro obtenerLibroPorId(int id) {
+    	return libroRepository.findById(id)
+    			.orElseThrow(() -> new ResourceNotFoundException("Libro no encontrado con id: " + id));
+    }
 }

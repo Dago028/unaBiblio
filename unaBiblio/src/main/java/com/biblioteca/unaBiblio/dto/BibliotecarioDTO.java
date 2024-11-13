@@ -1,4 +1,4 @@
-/*package com.biblioteca.unaBiblio.dto;
+package com.biblioteca.unaBiblio.dto;
 
 import com.biblioteca.unaBiblio.models.Bibliotecario;
 import lombok.AllArgsConstructor;
@@ -12,15 +12,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class BibliotecarioDTO {
     private int idBibliotecario;
-    private int cedula;
     private String nombreApellido;
     private String cargo;
-    private String anio_publicacion;
+    private int idBiblioteca;
+    private int idUsuario;
+    
 
     public BibliotecarioDTO(Bibliotecario bibliotecario) {
         this.idBibliotecario =  bibliotecario.getIdBibliotecario();
-        this.cedula = bibliotecario.getNombreCedula();
         this.nombreApellido = bibliotecario.getNombreApellido();
         this.cargo = bibliotecario.getCargo();
+        this.idBiblioteca = bibliotecario.getBiblioteca().getId_biblioteca();
+        this.idUsuario = bibliotecario.getUsuario().getId_usuario();
     }
-}*/
+}
