@@ -3,22 +3,22 @@ package com.biblioteca.unaBiblio.dto;
 
 import com.biblioteca.unaBiblio.models.Biblioteca;
 
-import jakarta.validation.constraints.NotNull;
+//import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class BibliotecaDTO {
 	
 	private int id_biblioteca;
 	
-	@NotNull(message = "La facultad no puede ser nula")
+	//@NotNull(mesage = "La facultad no puede ser nula")
     private String facultad;
     
     private Boolean estado;
@@ -29,5 +29,3 @@ public class BibliotecaDTO {
     	this.estado = biblioteca.getEstado();
     }
 }
-
-
